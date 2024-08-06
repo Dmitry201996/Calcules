@@ -28,6 +28,10 @@ public class Main {
         for (int i = 0; i < data.length; i++) {
             data[i] = data[i].replace("\"", "");
         }
+        if (data[0].length() > 10)
+            throw new Exception("Введено больше 10 символов");
+        if (data[1].length() > 10)
+            throw new Exception("Введено больше 10 символов");
  
  
         if (action == '+') {
@@ -60,10 +64,7 @@ public class Main {
             String result = data[0].substring(0, newLen);
             printInQuotes(result);
         }
-        if (data[0].length() > 10)
-            throw new Exception("Введено больше 10 символов");
-        if (data[1].length() > 10)
-            throw new Exception("Введено больше 10 символов");
+        
     }
  
     static void printInQuotes(String text){
